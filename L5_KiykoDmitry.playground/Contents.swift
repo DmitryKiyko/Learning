@@ -105,9 +105,7 @@ class SportCar: Car {
         self.bootvolume = bootvolume
     }
     
-    var description: String {
-        return String (describing: BrakeSize)
-    }
+   
     
     func ChangeBrakeSize(_ Diamentr: Int){
         BrakeSize = Diamentr
@@ -131,6 +129,9 @@ class SportCar: Car {
 }
 
 extension SportCar: CustomStringConvertible {
+    var description: String {
+         return String (describing: BrakeSize)
+     }
     func printDescription() {
         print(" Размер тормозных дисков: \(description) (мм)")
     }
@@ -187,9 +188,6 @@ class TrunkCar: Car {
     
     }
     
-    var description: String {
-        return String (describing: TrunkLength)
-    }
     
     func ChangeTrunkLength(_ Length: Double){
         TrunkLength = Length
@@ -205,6 +203,9 @@ class TrunkCar: Car {
 }
 
 extension TrunkCar: CustomStringConvertible {
+    var description: String {
+        return String (describing: TrunkLength)
+    }
     func printDescription() {
         print(" Длина багажника: \(description) (см)")
     }
@@ -220,17 +221,21 @@ var SportCar3 = SportCar(model: .Audi, manufacdate: .Aug2020, enginestatus: .Sto
 
 SportCar1.ChangeBrakeSize(340)
 SportCar1.FullEmptyBoot(statusB: .Full)
+SportCar1.ChangeSeats(2)
 SportCar1.printDescription()
 
 SportCar2.ChangeBrakeSize(350)
 SportCar2.FullEmptyBoot(statusB: .Full)
+SportCar2.ChangeSeats(2)
 SportCar2.printDescription()
 
 SportCar3.ChangeBrakeSize(330)
 SportCar3.FullEmptyBoot(statusB: .Full)
+SportCar3.ChangeSeats(2)
 SportCar3.printDescription()
 
 print("")
+
 
 
 var TrunkCar1 = TrunkCar(model: .VW, manufacdate: .Oct2020, enginestatus: .Stopped, windowsstatus: .Close, bootstatus: .Empty, bootvolume: 2800, km: 120.8, EnginePower: 270, TrunkLength: 220)
@@ -241,12 +246,16 @@ var TrunkCar3 = TrunkCar(model: .Ford, manufacdate: .Nov2020, enginestatus: .Sto
 
 TrunkCar1.ChangeTrunkLength(235)
 TrunkCar1.FullEmptyBoot(statusB: .Full)
+TrunkCar1.ChangeTrunkVolume(3000)
 TrunkCar1.printDescription()
 
 TrunkCar2.ChangeTrunkLength(230)
 TrunkCar2.FullEmptyBoot(statusB: .Full)
+TrunkCar2.ChangeTrunkVolume(2700)
 TrunkCar2.printDescription()
 
 TrunkCar3.ChangeTrunkLength(225)
 TrunkCar3.FullEmptyBoot(statusB: .Full)
+TrunkCar3.ChangeTrunkVolume(3050)
 TrunkCar3.printDescription()
+
